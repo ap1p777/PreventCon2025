@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreventCon 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Core Variables */
+        :root {
+            --primary: #0B3C5D;
+            --secondary: #1D70A2;
+            --accent: #E84A5F;
+            --light: #F4F7F9;
+            --dark: #2B2D42;
+            --text: #333;
+            --grey: #777;
+            --light-grey: #eee;
+            --border-radius: 8px;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            color: var(--dark);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-center h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            height: 50px;
+            width: 180px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 8rem 0 5rem;
+            margin-bottom: 4rem;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .event-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .info-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #d73950;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(232, 74, 95, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .print-only {
+            display: none;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .organizers {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .organizer-card {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 300px;
+            height: 200px; /* Add a fixed height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .organizer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .organizer-logo {
+            width: 150px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        /* Agenda Section */
+        .agenda {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .agenda::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(216, 241, 230, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 20%);
+            z-index: 0;
+        }
+
+        .agenda-header {
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .agenda-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, 
+                rgba(29, 112, 162, 0.2), 
+                rgba(29, 112, 162, 0.8), 
+                rgba(29, 112, 162, 0.2));
+            box-shadow: 0 0 10px rgba(29, 112, 162, 0.5);
+        }
+
+        .agenda-items {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .agenda-item {
+            position: relative;
+            display: flex;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 
+                        0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        
+        .agenda-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 24px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 0 4px rgba(29, 112, 162, 0.3), 
+                        0 0 10px rgba(29, 112, 162, 0.5);
+            z-index: 1;
+        }
+        
+        .agenda-item.special::before {
+            background: var(--accent);
+            box-shadow: 0 0 0 4px rgba(232, 74, 95, 0.3), 
+                        0 0 10px rgba(232, 74, 95, 0.5);
+        }
+
+        .agenda-item:hover {
+            transform: translateY(-5px) translateX(5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 
+                        0 5px 15px rgba(0, 0, 0, 0.05);
+            border-color: rgba(29, 112, 162, 0.3);
+        }
+        
+        .special:hover {
+            border-color: rgba(232, 74, 95, 0.3);
+        }
+
+        .agenda-time {
+            min-width: 100px;
+            background: linear-gradient(135deg, var(--primary), rgba(29, 112, 162, 0.7));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .agenda-time::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        .agenda-time span {
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        .special .agenda-time {
+            background: linear-gradient(135deg, var(--accent), rgba(232, 74, 95, 0.7));
+        }
+
+        .agenda-content {
+            flex: 1;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .agenda-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, 
+                transparent, 
+                rgba(29, 112, 162, 0.2), 
+                transparent);
+        }
+
+        .agenda-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .special .agenda-content h3 {
+            color: var(--accent);
+        }
+
+        .agenda-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .speaker {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            color: var(--grey);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .speaker::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 10px;
+            height: 1px;
+            background-color: var(--grey);
+        }
+
+        .speaker-icon {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        .special {
+            border-left: none;
+            position: relative;
+        }
+        
+        .special::after {
+            content: 'FEATURED';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 4px 8px;
+            background: rgba(232, 74, 95, 0.9);
+            color: white;
+            border-radius: 4px;
+        }
+
+        /* Speakers Section */
+        .speakers {
+            padding: 5rem 0;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .speaker-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .speaker-img {
+            width: 150px; /* Match the organizer card size */
+            height: 60px; /* Match the organizer card size */
+            object-fit: contain; /* Ensure the image fits within the dimensions */
+            margin: 0 auto 1rem;
+            border: 3px solid var(--secondary);
+            border-radius: 8px; /* Optional: Add rounded corners */
+        }
+
+        .speaker-info {
+            padding: 1.5rem;
+        }
+
+        .speaker-info h3 {
+            margin-bottom: 0.25rem;
+        }
+
+        .speaker-position {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Registration Section */
+        .registration {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .registration h2, .registration h3 {
+            color: white;
+        }
+
+        .registration h2:after {
+            background-color: white;
+        }
+
+        .registration-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .deadline {
+            margin: 2rem 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            margin-top: 0.3rem;
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .info-item {
+                flex: 0 0 100%;
+            }
+            
+            .agenda-item {
+                flex-direction: column;
+            }
+            
+            .agenda-time {
+                min-width: 100%;
+                padding: 0.75rem;
+            }
+            
+            .agenda-time span {
+                font-size: 1rem;
+            }
+            
+            .footer-column {
+                flex: 0 0 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .logo-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .organizers {
+                gap: 1.5rem;
+            }
+            
+            .organizer-card {
+                flex: 0 0 100%;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .print-only {
+                display: block !important;
+                margin: 1rem 0;
+                font-weight: bold;
+                color: black !important;
+            }
+
+            header {
+                position: relative;
+            }
+
+            .hero {
+                padding-top: 2rem;
+            }
+
+            .btn {
+                border: 2px solid black !important;
+                color: black !important;
+                background-color: transparent !important;
+            }
+
+            .agenda-item::before, 
+            .timeline::before, 
+            .agenda-time::after,
+            .special::after {
+                box-shadow: none !important;
+            }
+
+            .agenda-item:hover {
+                transform: none !important;
+                box-shadow: none !important;
+            }
+
+/* Featured Speakers Section */
+.featured-speakers {
+    padding: 4rem 0;
+    background-color: var(--light);
+}
+
+.featured-speakers h3 {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.featured-speakers h3:after {
+    content: '';
+    position: absolute;
+    bottom: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.speakers-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.speaker-panel {
+    position: relative;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.speaker-panel:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.speaker-img {
+    width: 120px;
+    height: 120px;
+    margin: 2rem auto 1rem;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+}
+
+.speaker-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.speaker-name {
+    color: var(--dark);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.speaker-position {
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.speaker-bio {
+    color: var(--grey);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    height: 4rem;
+    overflow: hidden;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--light);
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1200px) {
+    .speakers-row {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .speaker-panel {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .speakers-row {
+        gap: 2rem;
+    }
+    
+    .speaker-panel {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .speaker-bio {
+        height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .featured-speakers {
+        padding: 3rem 0;
+    }
+    
+    .speaker-panel {
+        max-width: 100%;
+    }
+}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="msplogo.png" alt="MSP Hitect Logo" class="logo" style="height: 70px; width: 200px;">
+                    <img src="CSM logo.png" alt="Cybersecurity Malaysia Logo" class="logo" style="height: 70px; width: 200px;">
+                    <img src="secpod_logo-removebg-preview.png" alt="SecPod Logo" class="logo" style="height: 70px; width: 200px;">
+                </div>
+                <nav class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#agenda">Agenda</a>
+                    <a href="#register">Register</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                <a href="menara cyber axis.jpg"></a>
+                    <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 600;">Cybersecurity Event</span>
+                    <h1>PreventCon 2025 : Innovate Cybersecurity with<br>a Prevention-First Strategy</h1>
+                    <p> Exploring cutting-edge strategies to stay ahead of cyber threats with a focus on prevention.</p>
+                    
+                    <div class="event-info">
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h3 style="color: #e9ecef;">Date & Time</h3>
+                                <p>Monday, 19th May 2025<br>8:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3 style="color: #e9ecef;">Location</h3>
+                                <p>Cybersecurity Malaysia<br>Tower 1, Menara Axis, Jalan Impact<br>63000 Cyberjaya, Selangor</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#register" class="btn">RESERVE YOUR SPOT</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="text-center">
+                    <h2>About the Event</h2>
+                    <p>MSP Hitect and SecPod has partnered with Cybersecurity Malaysia to bring you this exclusive Innovating Cybersecurity with a Prevention-First Strategy. This gathering offers a unique opportunity to explore the latest advancements, best practices, and strategies in Cybersecurity. Join industry experts as we discuss how to proactively protect against threats in an ever-evolving digital landscape.</p>
+                </div>
+                
+               
+                <div>
+                    <h3 class="text-center">Partnered with</h3>
+                    <div class="organizers">
+                        <div class="organizer-card">
+                            <img src="CSM logo.png" alt="Cybersecurity Malaysia" class="organizer-logo">
+                            <h4><b>Cybersecurity Malaysia</b></h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <h3>Event Highlights</h3>
+                    <div class="organizers">
+                        <div class="organizer-card">
+                            <i class="fas fa-microphone" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                            <h3>Expert Keynote</h3>
+                            <p>SecPod Vision and Innovative Cybersecurity with a Prevention-First Strategy</p>
+                        </div>
+                        <div class="organizer-card">
+                            <i class="fas fa-users" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                            <h3>Panel Discussion</h3>
+                            <p>Insights from SecPod, Cybersecurity Malaysia</p>
+                        </div>
+                        <div class="organizer-card">
+                            <i class="fas fa-handshake" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                            <h3>Networking</h3>
+                            <p>Connect with industry peers over coffee and lunch</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- CSS for Featured Speakers Section -->
+<style>
+    /* Featured Speakers Section */
+    .featured-speakers {
+        padding: 4rem 0;
+        background-color: var(--light);
+    }
+    
+    .featured-speakers h3 {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+    
+    .featured-speakers h3:after {
+        content: '';
+        position: absolute;
+        bottom: -0.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background-color: var(--accent);
+    }
+    
+    .speakers-row {
+        display: flex;
+        justify-content: center;
+        align-items: stretch; /* This helps with equal height */
+        flex-wrap: nowrap;
+        gap: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .speaker-panel {
+        position: relative;
+        background-color: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        width: 20%; /* Equal width */
+        min-width: 170px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .speaker-panel:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+    
+    .speaker-img {
+        width: 100px;
+        height: 100px;
+        margin: 1.25rem auto 0.75rem;
+        display: block;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--accent);
+    }
+    
+    .speaker-info {
+        padding: 0.75rem;
+        text-align: center;
+        flex-grow: 1; /* Allow the content to fill available space */
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .speaker-name {
+        color: var(--dark);
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+    
+    .speaker-position {
+        color: var(--accent);
+        font-weight: 500;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        height: 2.4rem; /* Fixed height for position - accomodates 2-3 lines */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .speaker-bio {
+        color: var(--grey);
+        font-size: 0.75rem;
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
+        height: 4.2rem; /* Fixed height */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+    
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: auto; /* Push to bottom */
+        padding-top: 0.5rem;
+    }
+    
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-color: var(--light);
+        color: var(--primary);
+        transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        background-color: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+    }
+    
+    /* Media queries for responsive design */
+    @media (max-width: 1200px) {
+        .speakers-row {
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+        
+        .speaker-panel {
+            width: 19%;
+            min-width: 160px;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .speakers-row {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .speaker-panel {
+            width: 30%;
+            min-width: 200px;
+        }
+        
+        .speaker-img {
+            width: 110px;
+            height: 110px;
+        }
+        
+        .speaker-bio {
+            height: 4.5rem;
+            font-size: 0.8rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .speaker-panel {
+            width: 45%;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .featured-speakers {
+            padding: 3rem 0;
+        }
+        
+        .speaker-panel {
+            width: 80%;
+        }
+        
+        .speaker-img {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .speaker-bio {
+            height: auto;
+            -webkit-line-clamp: 3;
+        }
+    }
+</style>
+
+<!-- HTML for Featured Speakers Section -->
+<section class="featured-speakers">
+    <div class="container">
+        <h3>Featured Speakers</h3>
+        <div class="speakers-row">
+            <div class="speaker-panel">
+                <img src="sayersilan77.jpg" alt="Sayersilan" class="speaker-img">
+                <div class="speaker-info">
+                    <h4 class="speaker-name">Sayersilan</h4>
+                    <div class="speaker-position">CEO, MSP Hitect</div>
+                    <p class="speaker-bio">With over a decade of leadership experience in strategic planning, business management, and corporate governance.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/silan-sayer-65aa77175/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="speaker-panel">
+                <img src="Chandrashekar.jpg" alt="Chandrashekar B" class="speaker-img">
+                <div class="speaker-info">
+                    <h4 class="speaker-name">Chandrashekar B</h4>
+                    <div class="speaker-position">CEO, SecPod</div>
+                    <p class="speaker-bio">Expert in cybersecurity with 20+ years experience developing endpoint security solutions.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/chandrashekharb/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="speaker-panel">
+                <img src="roshaimi2.jpg" alt="Roshaimi" class="speaker-img">
+                <div class="speaker-info">
+                    <h4 class="speaker-name">Wan Roshaimi</h4>
+                    <div class="speaker-position">CTO, CyberSecurity Malaysia</div>
+                    <p class="speaker-bio">Over 20 years in cybersecurity risk management, strategic planning, and governance.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/wan-roshaimi-wan-abdullah-a7175130/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="speaker-panel">
+                <img src="anweryusuf.jpg" alt="Anwer Yusoff" class="speaker-img">
+                <div class="speaker-info">
+                    <h4 class="speaker-name">Anwer Yusoff</h4>
+                    <div class="speaker-position">CISO, ITMAX System Bhd</div>
+                    <p class="speaker-bio">Specializes in industry partnerships and boosting Malaysia's global cybersecurity position.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/anwer-yusoff-4887241a/?originalSubdomain=my"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="speaker-panel">
+                <img src="sathya.png" alt="Sathya Prakash" class="speaker-img">
+                <div class="speaker-info">
+                    <h4 class="speaker-name">Sathya</h4>
+                    <div class="speaker-position">Regional Head, SecPod</div>
+                    <p class="speaker-bio">Specializes in cybersecurity and business growth, promoting the SanerNow platform.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="agenda">
+        <div class="container">
+            <div class="agenda-header text-center">
+                <h2>Event Agenda</h2>
+                <p>A comprehensive breakdown of the day's activities</p>
+            </div>
+            
+            <div class="agenda-container">
+                <div class="timeline">
+                    <div class="agenda-items">
+                        <div class="agenda-item">
+                            <div class="agenda-time">
+                                <span>8:00</span>
+                                AM
+                            </div>
+                            <div class="agenda-content">
+                                <h3>Registration & Networking</h3>
+                                <p>Start your day with refreshments and networking with fellow Cybersecurity professionals.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="agenda-item">
+                            <div class="agenda-time">
+                                <span>8:30</span>
+                                AM
+                            </div>
+                            <div class="agenda-content">
+                                <h3>Welcome Address & Keynote</h3>
+                                <div class="speaker">
+                                    <i class="fas fa-user-alt speaker-icon"></i>
+                                    <span>Sayersilan - MSP Hitect</span>
+                                    <i class="fas fa-user-alt speaker-icon"></i>
+                                    <span>"Securing Tomorrow: The Vision for a Prevention-First Cybersecurity"<br>(Chandrashekar B - SecPod)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="agenda-item special">
+                            <div class="agenda-time">
+                                <span>9:00</span>
+                                AM
+                            </div>
+                            <div class="agenda-content">
+                                <h3>Session 1: The Pitfalls of Traditional Vulnerability Management</h3>
+                                <div class="speaker">
+                                    <i class="fas fa-user-alt speaker-icon"></i>
+                                    <span>"Why Legacy Approaches Are Failing & What’s Next"<br>(Wan Roshaimi - CyberSecurity Malaysia)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="agenda-item special">
+                            <div class="agenda-time">
+                                <span>9:30</span>
+                                AM
+                            </div>
+                            <div class="agenda-content">
+                                <h3>Session 2: Cloud Security in the Modern Age</h3>
+                                <div class="speaker">
+                                    <i class="fas fa-user-alt speaker-icon"></i>
+                                    <span>"Unmasking the Challenges: Misconfigurations, Compliance & Threats"<br>(Anwer Yusoff - ITMAX System Bhd)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="agenda-item">
+                            <div class="agenda-time">
+                                <span>10:00</span>
+                                AM
+                            </div>
+                            <div class="agenda-content">
+                                <h3>Morning Break & Networking</h3>
+                                <p>Refresh and continue networking with attendees.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="agenda-item special">
+                            <div class="agenda-time">
+                                <span>10:20</span>
+                                AM
+                            </div>
+                            <div class="agenda-content">
+                                <h3>Session 3: The Prevention-First Approach by SecPod</h3>
+                                <div class="speaker">
+                                    <i class="fas fa-user-alt speaker-icon"></i>
+                                    <span>"Fixing Security Gaps Before They Become Breaches"<br>(Sathya - SecPod)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="agenda-item">
+                            <div class="agenda-time">
+                                <span>11:15</span>
+                                AM
+                            </div>
+                            <div class="agenda-content">
+                                <h3>Panel Discussion: The Future of Cybersecurity – Trends & Predictions</h3>
+                                <div class="speaker">
+                                    <i class="fas fa-user-alt speaker-icon"></i>
+                                    <span>Panel of experts discussing evolving threats, AI in security, and industry best practices.<br>(Sathya, Wan Roshaimi)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="agenda-item">
+                            <div class="agenda-time">
+                                <span>12:00</span>
+                                PM
+                            </div>
+                            <div class="agenda-content">
+                                <h3>Closing Remarks & Networking</h3>
+                                <p>Connect with industry peers over a delicious lunch.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="registration">
+        <div class="container">
+            <div class="registration-content">
+                <h2>Join Us For This Exclusive Cybersecurity Event</h2>
+                <p>Spaces are limited for this premier industry gathering. Secure your spot today.</p>
+                <div class="deadline">Please confirm your attendance by 12th May 2025</div>
+                <a href="https://forms.gle/nsZ4HKyb4dmGxt1U9" class="btn btn-outline">RESERVE YOUR SPOT</a>
+                <p class="print-only">Registration URL: https://forms.gle/nsZ4HKyb4dmGxt1U9</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="map-container" style="text-align: center; max-width: 1;"></div>
+        <div class="map-container" style="text-align: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.645575032909!2d101.6584179249702!3d2.917887547058485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caece3ab197c73%3A0xe5f621259cd18425!2sCyberSecurity%20Malaysia!5e0!3m2!1sen!2smy!4v1741661151357!5m2!1sen!2smy" 
+                width="100%" 
+                height="450" 
+                style="border:0; border-radius: 8px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About the Organizers</h3>
+                    <p>This Symposium is organized by MSP Hitect and SecPod in collaboration with Cybersecurity Malaysia bringing together expertise in Cybersecurity solutions and best practices.</p>
+                </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2025, MSP Hitect (M) Sdn. Bhd., All rights reserved. | Partner: Cybersecurity Malaysia & SecPod </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
